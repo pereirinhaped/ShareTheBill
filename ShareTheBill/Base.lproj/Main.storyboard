@@ -220,6 +220,9 @@
                                                 <state key="normal" title="Euro">
                                                     <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="euroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aac-ZV-KqK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-66-joU">
                                                 <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -231,6 +234,9 @@
                                                 <state key="normal" title="Dollar">
                                                     <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="dollarPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Edw-kY-TmC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-7V-d7q">
                                                 <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -242,6 +248,9 @@
                                                 <state key="normal" title="Other">
                                                     <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="otherPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKS-lz-uEJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -266,6 +275,16 @@
                             <constraint firstItem="zSP-eb-EIB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yV3-Fx-GDP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billValueTxtFld" destination="82S-tc-1Sk" id="IMO-yT-4CJ"/>
+                        <outlet property="eachSubTotalLbl" destination="esE-VN-SGX" id="bxv-3M-y5r"/>
+                        <outlet property="splitSelectorLbl" destination="mt8-27-uZY" id="KJN-ak-UaX"/>
+                        <outlet property="splitSelectorSlider" destination="Mwp-1K-LJU" id="9ba-Uy-qDU"/>
+                        <outlet property="tipSelectorLbl" destination="Rja-L7-fbr" id="Q5Z-Tc-wBk"/>
+                        <outlet property="tipSelectorSlider" destination="kle-iD-0WV" id="t3M-9B-rGY"/>
+                        <outlet property="tipValueLbl" destination="K3S-69-EjM" id="r93-HQ-Ya3"/>
+                        <outlet property="totalValueLbl" destination="Yf9-2G-oRl" id="KHl-3O-Egl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
