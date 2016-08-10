@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-eb-EIB" userLabel="TitleBaseView">
@@ -33,7 +33,7 @@
                                     <constraint firstItem="UNL-Rx-Hvu" firstAttribute="top" secondItem="zSP-eb-EIB" secondAttribute="top" constant="12" id="l2Y-Ys-LEs"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lwa-Or-wpr">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Lwa-Or-wpr">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-l6-183">
                                         <subviews>
@@ -48,7 +48,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h37-kh-O4Q">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="h37-kh-O4Q">
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-iu-qLC">
                                                 <subviews>
@@ -131,7 +131,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T0c-Vy-OJ8">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="T0c-Vy-OJ8">
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RSp-XF-MxL">
                                                 <subviews>
@@ -186,9 +186,65 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-x1-NUc">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-bZ-YjM">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-mI-ksB">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kD2-79-Qan">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-Zc-iyV">
+                                                        <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="XMt-EN-OZA"/>
+                                                            <constraint firstAttribute="width" constant="75" id="ehR-9t-Wd0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Euro">
+                                                            <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-66-joU">
+                                                        <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="1MQ-Yh-xZY"/>
+                                                            <constraint firstAttribute="width" constant="75" id="vgB-zn-Yic"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Dollar">
+                                                            <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-7V-d7q">
+                                                        <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="75" id="RdK-jV-BRN"/>
+                                                            <constraint firstAttribute="height" constant="45" id="sB8-oy-3uw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Other">
+                                                            <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="I9r-bZ-YjM" firstAttribute="trailing" secondItem="kD2-79-Qan" secondAttribute="trailing" id="7Ii-NQ-etW"/>
+                                            <constraint firstItem="I9r-bZ-YjM" firstAttribute="leading" secondItem="kD2-79-Qan" secondAttribute="leading" id="mHR-7j-MES"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7Nl-l6-183" firstAttribute="leading" secondItem="Lwa-Or-wpr" secondAttribute="leading" id="0ZL-AV-ECQ"/>
+                                    <constraint firstItem="1VB-x1-NUc" firstAttribute="trailing" secondItem="T0c-Vy-OJ8" secondAttribute="trailing" id="0nG-Xu-GAe"/>
+                                    <constraint firstItem="1VB-x1-NUc" firstAttribute="leading" secondItem="T0c-Vy-OJ8" secondAttribute="leading" id="41R-dv-HM2"/>
                                     <constraint firstItem="T0c-Vy-OJ8" firstAttribute="leading" secondItem="h37-kh-O4Q" secondAttribute="leading" id="8Sn-tY-LWw"/>
                                     <constraint firstItem="h37-kh-O4Q" firstAttribute="trailing" secondItem="7Nl-l6-183" secondAttribute="trailing" id="D9J-50-cJf"/>
                                     <constraint firstAttribute="trailing" secondItem="7Nl-l6-183" secondAttribute="trailing" id="HVd-Eh-gsu"/>
