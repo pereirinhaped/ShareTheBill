@@ -33,7 +33,7 @@
                                     <constraint firstItem="UNL-Rx-Hvu" firstAttribute="top" secondItem="zSP-eb-EIB" secondAttribute="top" constant="12" id="l2Y-Ys-LEs"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Lwa-Or-wpr">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Lwa-Or-wpr">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-l6-183">
                                         <subviews>
@@ -61,7 +61,7 @@
                                                         <color key="textColor" red="0.0" green="0.38039215686274508" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kle-iD-0WV">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kle-iD-0WV">
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="UhZ-zS-Ljz"/>
                                                         </constraints>
@@ -186,71 +186,71 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-x1-NUc">
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-bZ-YjM">
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-mI-ksB">
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kD2-79-Qan">
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-Zc-iyV">
-                                                        <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="XMt-EN-OZA"/>
-                                                            <constraint firstAttribute="width" constant="75" id="ehR-9t-Wd0"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <state key="normal" title="Euro">
-                                                            <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-66-joU">
-                                                        <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="1MQ-Yh-xZY"/>
-                                                            <constraint firstAttribute="width" constant="75" id="vgB-zn-Yic"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <state key="normal" title="Dollar">
-                                                            <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-7V-d7q">
-                                                        <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="75" id="RdK-jV-BRN"/>
-                                                            <constraint firstAttribute="height" constant="45" id="sB8-oy-3uw"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <state key="normal" title="Other">
-                                                            <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="I9r-bZ-YjM" firstAttribute="trailing" secondItem="kD2-79-Qan" secondAttribute="trailing" id="7Ii-NQ-etW"/>
-                                            <constraint firstItem="I9r-bZ-YjM" firstAttribute="leading" secondItem="kD2-79-Qan" secondAttribute="leading" id="mHR-7j-MES"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7Nl-l6-183" firstAttribute="leading" secondItem="Lwa-Or-wpr" secondAttribute="leading" id="0ZL-AV-ECQ"/>
-                                    <constraint firstItem="1VB-x1-NUc" firstAttribute="trailing" secondItem="T0c-Vy-OJ8" secondAttribute="trailing" id="0nG-Xu-GAe"/>
-                                    <constraint firstItem="1VB-x1-NUc" firstAttribute="leading" secondItem="T0c-Vy-OJ8" secondAttribute="leading" id="41R-dv-HM2"/>
                                     <constraint firstItem="T0c-Vy-OJ8" firstAttribute="leading" secondItem="h37-kh-O4Q" secondAttribute="leading" id="8Sn-tY-LWw"/>
                                     <constraint firstItem="h37-kh-O4Q" firstAttribute="trailing" secondItem="7Nl-l6-183" secondAttribute="trailing" id="D9J-50-cJf"/>
                                     <constraint firstAttribute="trailing" secondItem="7Nl-l6-183" secondAttribute="trailing" id="HVd-Eh-gsu"/>
                                     <constraint firstItem="T0c-Vy-OJ8" firstAttribute="trailing" secondItem="h37-kh-O4Q" secondAttribute="trailing" id="R0O-GF-DO0"/>
                                     <constraint firstItem="h37-kh-O4Q" firstAttribute="leading" secondItem="7Nl-l6-183" secondAttribute="leading" id="jlh-z7-G3O"/>
                                     <constraint firstItem="7Nl-l6-183" firstAttribute="top" secondItem="Lwa-Or-wpr" secondAttribute="top" id="nYr-P1-NeY"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-x1-NUc">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-bZ-YjM">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-mI-ksB">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kD2-79-Qan">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-Zc-iyV">
+                                                <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="XMt-EN-OZA"/>
+                                                    <constraint firstAttribute="width" constant="75" id="ehR-9t-Wd0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Euro">
+                                                    <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-66-joU">
+                                                <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="1MQ-Yh-xZY"/>
+                                                    <constraint firstAttribute="width" constant="75" id="vgB-zn-Yic"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Dollar">
+                                                    <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-7V-d7q">
+                                                <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="RdK-jV-BRN"/>
+                                                    <constraint firstAttribute="height" constant="45" id="sB8-oy-3uw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Other">
+                                                    <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="5LB-CD-Shs"/>
+                                    <constraint firstItem="I9r-bZ-YjM" firstAttribute="trailing" secondItem="kD2-79-Qan" secondAttribute="trailing" id="7Ii-NQ-etW"/>
+                                    <constraint firstAttribute="height" constant="90" id="fSK-y0-1MR"/>
+                                    <constraint firstItem="I9r-bZ-YjM" firstAttribute="leading" secondItem="kD2-79-Qan" secondAttribute="leading" id="mHR-7j-MES"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -260,6 +260,8 @@
                             <constraint firstItem="zSP-eb-EIB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FNc-uq-8GJ"/>
                             <constraint firstAttribute="trailing" secondItem="Lwa-Or-wpr" secondAttribute="trailing" constant="20" id="QAp-Db-VgA"/>
                             <constraint firstAttribute="trailing" secondItem="zSP-eb-EIB" secondAttribute="trailing" id="T0A-Be-6SW"/>
+                            <constraint firstItem="1VB-x1-NUc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pPH-Kf-sLk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1VB-x1-NUc" secondAttribute="bottom" constant="20" id="sZv-uU-nnA"/>
                             <constraint firstItem="Lwa-Or-wpr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="uaN-Ia-iU1"/>
                             <constraint firstItem="zSP-eb-EIB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yV3-Fx-GDP"/>
                         </constraints>
