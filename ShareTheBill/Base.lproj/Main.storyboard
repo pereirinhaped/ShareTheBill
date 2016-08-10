@@ -42,15 +42,15 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kle-iD-0WV">
-                                <frame key="frameInset" minX="117" minY="193" width="240" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kle-iD-0WV">
                                 <color key="minimumTrackTintColor" red="0.043262548744678497" green="0.33413094282150269" blue="0.20232704281806946" alpha="0.6830658783783784" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.8640633225440979" green="0.93025457859039307" blue="0.67169147729873657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIP 16%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-L7-fbr">
-                                <frame key="frameInset" minX="20" minY="198" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP 16%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-L7-fbr">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="BRO-Ra-Kra"/>
+                                    <constraint firstAttribute="height" constant="20" id="vsq-UC-zCR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.38039215686274508" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -126,12 +126,17 @@
                         <color key="backgroundColor" red="0.8640633225440979" green="0.93025457859039307" blue="0.67169147729873657" alpha="0.17008023648648649" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zSP-eb-EIB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FNc-uq-8GJ"/>
+                            <constraint firstItem="kle-iD-0WV" firstAttribute="trailing" secondItem="82S-tc-1Sk" secondAttribute="trailing" id="PhN-U8-7RF"/>
                             <constraint firstAttribute="trailing" secondItem="zSP-eb-EIB" secondAttribute="trailing" id="T0A-Be-6SW"/>
                             <constraint firstItem="82S-tc-1Sk" firstAttribute="top" secondItem="zSP-eb-EIB" secondAttribute="bottom" constant="30" id="W5d-vP-IWq"/>
+                            <constraint firstItem="kle-iD-0WV" firstAttribute="centerY" secondItem="Rja-L7-fbr" secondAttribute="centerY" id="d9E-fk-NeZ"/>
                             <constraint firstItem="82S-tc-1Sk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ddc-Sk-hFl"/>
+                            <constraint firstItem="kle-iD-0WV" firstAttribute="leading" secondItem="Rja-L7-fbr" secondAttribute="trailing" constant="15" id="f8C-cC-nhf"/>
                             <constraint firstItem="82S-tc-1Sk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fwq-G7-LzA"/>
                             <constraint firstAttribute="trailing" secondItem="82S-tc-1Sk" secondAttribute="trailing" constant="20" id="rgf-uG-hfP"/>
+                            <constraint firstItem="Rja-L7-fbr" firstAttribute="top" secondItem="82S-tc-1Sk" secondAttribute="bottom" constant="40" id="vgT-9V-Nnm"/>
                             <constraint firstItem="zSP-eb-EIB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yV3-Fx-GDP"/>
+                            <constraint firstItem="Rja-L7-fbr" firstAttribute="leading" secondItem="82S-tc-1Sk" secondAttribute="leading" id="z8h-kn-Ukm"/>
                         </constraints>
                     </view>
                 </viewController>
