@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShareTheBillVC: UIViewController {
+class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var billValueTxtFld: UITextField!
 	
@@ -23,9 +23,19 @@ class ShareTheBillVC: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		billValueTxtFld.delegate = self
+		
+		// var billCalc = Calculator()
+		
+		
 	}
 
+	// TextField Delegate
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		print("Teste")
+	}
+	
 	// IB Actions
 	@IBAction func euroPressed(_ sender: UIButton) {
 	}
@@ -35,6 +45,8 @@ class ShareTheBillVC: UIViewController {
 	
 	@IBAction func otherPressed(_ sender: UIButton) {
 	}
+	
+	// Auxiliary functions
 	
 	
 }
