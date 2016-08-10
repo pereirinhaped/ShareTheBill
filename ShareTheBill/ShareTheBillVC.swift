@@ -21,11 +21,15 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var splitSelectorSlider: UISlider!
 	@IBOutlet weak var eachSubTotalLbl: UILabel!
 	
+	var billCalc = Calculator()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		billValueTxtFld.delegate = self
 		
-		// var billCalc = Calculator()
+		let tap = UITapGestureRecognizer(target: self, action: #selector(ShareTheBillVC.dismissKeyboard))
+		view.addGestureRecognizer(tap)
 		
 		
 	}
@@ -35,6 +39,50 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		print("Teste")
 	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		dismissKeyboard()
+		return false
+	}
+	
+	func dismissKeyboard() {
+		view.endEditing(true)
+		updateValues()
+		
+	}
+	
+	func updateValues() {
+		
+		var billValueToString = ""
+		
+		if let billValueTxt = billValueTxtFld.text {
+			if !billValueTxt.characters.contains(",") && !billValueTxt.characters.contains(".") {
+				billValueTxtFld.text = "\(billValueTxt),00"
+				billValueToString = billValueTxt
+			} else {
+				billValueTxtFld.text = billValueTxt.replacingOccurrences(of: ".", with: ",")
+				billValueToString = billValueTxt
+			}
+		}
+		if let billValue = Double(billValueToString) {
+			billCalc.billValue = billValue
+		}
+		
+		
+		
+		// Test values
+		billCalc.tipPercent = 0.1
+		billCalc.splitBy = 1
+		
+		let tipValueTxt = String(format: "%.2f", billCalc.tipValue).replacingOccurrences(of: ".", with: ",")
+		let totalValueTxt = String(format: "%.2f", billCalc.totalValue).replacingOccurrences(of: ".", with: ",")
+		let eachSubTotalTxt = String(format: "%.2f", billCalc.eachSubTotalValue).replacingOccurrences(of: ".", with: ",")
+		
+		tipValueLbl.text = "\(tipValueTxt) €"
+		totalValueLbl.text = "\(totalValueTxt) €"
+		eachSubTotalLbl.text = "\(eachSubTotalTxt) €"
+	}
+	
 	
 	// IB Actions
 	@IBAction func euroPressed(_ sender: UIButton) {

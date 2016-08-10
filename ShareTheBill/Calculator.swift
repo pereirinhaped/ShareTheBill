@@ -22,6 +22,8 @@ public class Calculator {
 		set {
 			if newValue > 0.0 {
 				_billValue = newValue
+			} else {
+				_billValue = 0.0
 			}
 		}
 	}
@@ -59,4 +61,5 @@ public class Calculator {
 	public var eachSubTotalValue: Double {
 		return totalValue / _splitBy
 	}
+	
 }
