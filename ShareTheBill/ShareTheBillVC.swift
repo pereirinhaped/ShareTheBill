@@ -37,7 +37,7 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	// TextField Delegate
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		print("Teste")
+		updateValues()
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -47,8 +47,6 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	
 	func dismissKeyboard() {
 		view.endEditing(true)
-		updateValues()
-		
 	}
 	
 	func updateValues() {
@@ -59,6 +57,8 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 			if !billValueTxt.characters.contains(",") && !billValueTxt.characters.contains(".") {
 				billValueTxtFld.text = "\(billValueTxt),00"
 				billValueToString = billValueTxt
+			} else if billValueTxt.characters.contains(",") {
+				billValueToString = billValueTxt.replacingOccurrences(of: ",", with: ".")
 			} else {
 				billValueTxtFld.text = billValueTxt.replacingOccurrences(of: ".", with: ",")
 				billValueToString = billValueTxt
