@@ -10,6 +10,8 @@ import UIKit
 
 class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 
+	
+	// MARK: *** @IBOutlets
 	@IBOutlet weak var billValueTxtFld: UITextField!
 	
 	@IBOutlet weak var tipSelectorLbl: UILabel!
@@ -21,12 +23,18 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var splitSelectorSlider: UISlider!
 	@IBOutlet weak var eachSubTotalLbl: UILabel!
 	
+	// MARK: *** Variables and Properties
 	var billCalc = Calculator()
 	
+	
+	// MARK: *** View Functions
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		billValueTxtFld.delegate = self
+		
+		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value*100))%")
+		splitSelectorLbl.text = ("SPLIT \(Int(splitSelectorSlider.value))")
 		
 		let tap = UITapGestureRecognizer(target: self, action: #selector(ShareTheBillVC.dismissKeyboard))
 		view.addGestureRecognizer(tap)
@@ -34,7 +42,7 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		
 	}
 
-	// TextField Delegate
+	// MARK: *** TextField Delegate
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		updateValues()
@@ -48,6 +56,30 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	func dismissKeyboard() {
 		view.endEditing(true)
 	}
+	
+	// MARK: *** TipSlider Actions
+	@IBAction func tipSliderUpdate(_ sender: AnyObject) {
+		tipSelectorSlider.value = roundf(tipSelectorSlider.value*10)*0.1
+		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value*100))%")
+		updateValues()
+	}
+	@IBAction func splitSliderUpdate(_ sender: AnyObject) {
+		splitSelectorSlider.value = splitSelectorSlider.value.rounded()
+		splitSelectorLbl.text = ("SPLIT \(Int(splitSelectorSlider.value))")
+		updateValues()
+	}
+	
+	// MARK: *** @IBActions
+	@IBAction func euroPressed(_ sender: UIButton) {
+	}
+
+	@IBAction func dollarPressed(_ sender: UIButton) {
+	}
+	
+	@IBAction func otherPressed(_ sender: UIButton) {
+	}
+	
+	// MARK: *** Functions
 	
 	func updateValues() {
 		
@@ -68,11 +100,8 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 			billCalc.billValue = billValue
 		}
 		
-		
-		
-		// Test values
-		billCalc.tipPercent = 0.1
-		billCalc.splitBy = 1
+		billCalc.tipPercent = Double(roundf(tipSelectorSlider.value*10)*0.1)
+		billCalc.splitBy = Double(splitSelectorSlider.value)
 		
 		let tipValueTxt = String(format: "%.2f", billCalc.tipValue).replacingOccurrences(of: ".", with: ",")
 		let totalValueTxt = String(format: "%.2f", billCalc.totalValue).replacingOccurrences(of: ".", with: ",")
@@ -82,19 +111,6 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		totalValueLbl.text = "\(totalValueTxt) €"
 		eachSubTotalLbl.text = "\(eachSubTotalTxt) €"
 	}
-	
-	
-	// IB Actions
-	@IBAction func euroPressed(_ sender: UIButton) {
-	}
-
-	@IBAction func dollarPressed(_ sender: UIButton) {
-	}
-	
-	@IBAction func otherPressed(_ sender: UIButton) {
-	}
-	
-	// Auxiliary functions
 	
 	
 }

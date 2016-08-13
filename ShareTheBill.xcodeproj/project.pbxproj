@@ -56,15 +56,39 @@
 		C1045FB61D5B2C5E0043E340 /* ShareTheBill */ = {
 			isa = PBXGroup;
 			children = (
+				C16638F51D5EA6DC0078E2D6 /* Model */,
+				C16638F71D5EA6F50078E2D6 /* Control */,
+				C16638F61D5EA6E90078E2D6 /* View */,
 				C1045FB71D5B2C5E0043E340 /* AppDelegate.swift */,
-				C1045FB91D5B2C5E0043E340 /* ShareTheBillVC.swift */,
 				C1045FBB1D5B2C5E0043E340 /* Main.storyboard */,
 				C1045FBE1D5B2C5E0043E340 /* Assets.xcassets */,
 				C1045FC01D5B2C5E0043E340 /* LaunchScreen.storyboard */,
 				C1045FC31D5B2C5E0043E340 /* Info.plist */,
-				C1ED68EE1D5B737200FC9A44 /* Calculator.swift */,
 			);
 			path = ShareTheBill;
+			sourceTree = "<group>";
+		};
+		C16638F51D5EA6DC0078E2D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1ED68EE1D5B737200FC9A44 /* Calculator.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C16638F61D5EA6E90078E2D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C16638F71D5EA6F50078E2D6 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				C1045FB91D5B2C5E0043E340 /* ShareTheBillVC.swift */,
+			);
+			name = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
