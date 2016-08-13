@@ -46,6 +46,9 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="textFieldValueUpdated:" destination="BYZ-38-t0r" eventType="editingChanged" id="xgf-5q-NyQ"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -257,6 +260,9 @@
                                                 <state key="normal" title="Euro">
                                                     <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="euroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1A-U7-xac"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-66-joU">
                                                 <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,6 +274,9 @@
                                                 <state key="normal" title="Dollar">
                                                     <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="dollarPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dj-N7-avs"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-7V-d7q">
                                                 <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -276,9 +285,12 @@
                                                     <constraint firstAttribute="height" constant="45" id="sB8-oy-3uw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <state key="normal" title="Other">
+                                                <state key="normal" title="None">
                                                     <color key="titleColor" red="0.92156862750000001" green="0.96862745100000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="otherPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o2s-wC-G2m"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

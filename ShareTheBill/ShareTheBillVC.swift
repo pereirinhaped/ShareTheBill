@@ -13,15 +13,15 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	
 	// MARK: *** @IBOutlets
 	@IBOutlet weak var billValueTxtFld: UITextField!
-	
 	@IBOutlet weak var tipSelectorLbl: UILabel!
 	@IBOutlet weak var tipSelectorSlider: UISlider!
 	@IBOutlet weak var tipValueLbl: UILabel!
 	@IBOutlet weak var totalValueLbl: UILabel!
-	
 	@IBOutlet weak var splitSelectorLbl: UILabel!
 	@IBOutlet weak var splitSelectorSlider: UISlider!
 	@IBOutlet weak var eachSubTotalLbl: UILabel!
+	
+	var currency = "Euro"
 	
 	// MARK: *** Variables and Properties
 	var billCalc = Calculator()
@@ -39,10 +39,13 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		let tap = UITapGestureRecognizer(target: self, action: #selector(ShareTheBillVC.dismissKeyboard))
 		view.addGestureRecognizer(tap)
 		
-		
 	}
 
-	// MARK: *** TextField Delegate
+	// MARK: *** TextField
+	
+	@IBAction func textFieldValueUpdated(_ sender: UITextField) {
+		
+	}
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		updateValues()
@@ -71,12 +74,18 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	
 	// MARK: *** @IBActions
 	@IBAction func euroPressed(_ sender: UIButton) {
+		currency = "Euro"
+		updateValues()
 	}
 
 	@IBAction func dollarPressed(_ sender: UIButton) {
+		currency = "Dollar"
+		updateValues()
 	}
 	
 	@IBAction func otherPressed(_ sender: UIButton) {
+		currency = "General"
+		updateValues()
 	}
 	
 	// MARK: *** Functions
@@ -107,11 +116,40 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		let totalValueTxt = String(format: "%.2f", billCalc.totalValue).replacingOccurrences(of: ".", with: ",")
 		let eachSubTotalTxt = String(format: "%.2f", billCalc.eachSubTotalValue).replacingOccurrences(of: ".", with: ",")
 		
-		tipValueLbl.text = "\(tipValueTxt) €"
-		totalValueLbl.text = "\(totalValueTxt) €"
-		eachSubTotalLbl.text = "\(eachSubTotalTxt) €"
+		// Update Labels according to currency
+		if currency == "Euro" {
+			tipValueLbl.text = "\(tipValueTxt) €"
+			totalValueLbl.text = "\(totalValueTxt) €"
+			eachSubTotalLbl.text = "\(eachSubTotalTxt) €"
+		} else if currency == "Dollar" {
+			tipValueLbl.text = "$ \(tipValueTxt)"
+			totalValueLbl.text = "$ \(totalValueTxt)"
+			eachSubTotalLbl.text = "$ \(eachSubTotalTxt)"
+		} else if currency == "General" {
+			tipValueLbl.text = "\(tipValueTxt)"
+			totalValueLbl.text = "\(totalValueTxt)"
+			eachSubTotalLbl.text = "\(eachSubTotalTxt)"
+		}
+		
 	}
 	
-	
+	/*
+	func updateLabelValues() {
+		// Update Labels according to currency
+		if currency == "Euro" {
+			tipValueLbl.text = "\(tipValueTxt) €"
+			totalValueLbl.text = "\(totalValueTxt) €"
+			eachSubTotalLbl.text = "\(eachSubTotalTxt) €"
+		} else if currency == "Dollar" {
+			tipValueLbl.text = "$ \(tipValueTxt)"
+			totalValueLbl.text = "$ \(totalValueTxt)"
+			eachSubTotalLbl.text = "$ \(eachSubTotalTxt)"
+		} else if currency == "General" {
+			tipValueLbl.text = "\(tipValueTxt)"
+			totalValueLbl.text = "\(totalValueTxt)"
+			eachSubTotalLbl.text = "\(eachSubTotalTxt)"
+		}
+	}
+	*/
 }
 
