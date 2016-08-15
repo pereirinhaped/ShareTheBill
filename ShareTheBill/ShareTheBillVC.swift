@@ -43,11 +43,8 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 
 	// MARK: *** TextField
 	
-	@IBAction func textFieldValueUpdated(_ sender: UITextField) {
-		
-	}
-	
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		
 		let inverseSet = NSCharacterSet(charactersIn:"0123456789,.").inverted
 		
 		let components = string.components(separatedBy: inverseSet)
@@ -55,6 +52,14 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		let filtered = components.joined(separator: "")
 		
 		guard let text = textField.text else { return true }
+		
+		let countdots = text.components(separatedBy: ".").count - 1
+		
+		if countdots > 0 && (string == "." || string == ",") { return false }
+		
+		let countcommas = text.components(separatedBy: ",").count - 1
+		
+		if countcommas > 0 && (string == "." || string == ",") { return false }
 		
 		let newLength = text.characters.count + string.characters.count - range.length
 		
@@ -122,6 +127,7 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 			return removeZeros(aString: aString.substring(from: aString.index(aString.startIndex, offsetBy: 1)))
 		}
 		
+		// Format
 		if let billValueTxt = billValueTxtFld.text {
 			if !billValueTxt.characters.contains(",") && !billValueTxt.characters.contains(".") && !(billValueTxtFld.text == "") {
 				billValueTxtFld.text = "\(removeZeros(aString: billValueTxt)),00"
