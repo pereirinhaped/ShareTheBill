@@ -48,21 +48,17 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	}
 	
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-		// Create an `NSCharacterSet` set which includes everything *but* the digits
 		let inverseSet = NSCharacterSet(charactersIn:"0123456789,.").inverted
 		
-		// At every character in this "inverseSet" contained in the string,
-		// split the string up into components which exclude the characters
-		// in this inverse set
 		let components = string.components(separatedBy: inverseSet)
 		
-		// Rejoin these components
-		let filtered = components.joined(separator: "")  // use join("", components) if you are using Swift 1.2
+		let filtered = components.joined(separator: "")
 		
-		// If the original string is equal to the filtered string, i.e. if no
-		// inverse characters were present to be eliminated, the input is valid
-		// and the statement returns true; else it returns false
-		return string == filtered
+		guard let text = textField.text else { return true }
+		
+		let newLength = text.characters.count + string.characters.count - range.length
+		
+		return string == filtered && newLength <= 10
 	}
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
@@ -82,12 +78,16 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	@IBAction func tipSliderUpdate(_ sender: AnyObject) {
 		tipSelectorSlider.value = roundf(tipSelectorSlider.value*10)*0.1
 		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value*100))%")
-		updateValues()
+		if billValueTxtFld.text != "" {
+			updateValues()
+		}
 	}
 	@IBAction func splitSliderUpdate(_ sender: AnyObject) {
 		splitSelectorSlider.value = splitSelectorSlider.value.rounded()
 		splitSelectorLbl.text = ("SPLIT \(Int(splitSelectorSlider.value))")
-		updateValues()
+		if billValueTxtFld.text != "" {
+			updateValues()
+		}
 	}
 	
 	// MARK: *** @IBActions
@@ -158,24 +158,5 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 			eachSubTotalLbl.text = "\(eachSubTotalTxt)"
 		}
 	}
-	
-	/*
-	func updateLabelValues() {
-		// Update Labels according to currency
-		if currency == "Euro" {
-			tipValueLbl.text = "\(tipValueTxt) €"
-			totalValueLbl.text = "\(totalValueTxt) €"
-			eachSubTotalLbl.text = "\(eachSubTotalTxt) €"
-		} else if currency == "Dollar" {
-			tipValueLbl.text = "$ \(tipValueTxt)"
-			totalValueLbl.text = "$ \(totalValueTxt)"
-			eachSubTotalLbl.text = "$ \(eachSubTotalTxt)"
-		} else if currency == "General" {
-			tipValueLbl.text = "\(tipValueTxt)"
-			totalValueLbl.text = "\(totalValueTxt)"
-			eachSubTotalLbl.text = "\(eachSubTotalTxt)"
-		}
-	}
-	*/
 }
 
