@@ -33,18 +33,18 @@ public class Calculator {
 			return _tipPercent
 		}
 		set {
-			if newValue >= 0.0 && newValue <= 0.5 {
+			if newValue >= 0 && newValue <= 30 {
 				_tipPercent = newValue
 			}
 		}
 	}
 	
 	public var tipValue: Double {
-			return _billValue * _tipPercent
+			return _billValue * (_tipPercent/100.0)
 	}
 	
 	public var totalValue: Double {
-		return _billValue * (1 + _tipPercent)
+		return _billValue + tipValue
 	}
 	
 	public var splitBy: Double {

@@ -33,7 +33,7 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		
 		billValueTxtFld.delegate = self
 		
-		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value*100))%")
+		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value))%")
 		splitSelectorLbl.text = ("SPLIT \(Int(splitSelectorSlider.value))")
 		
 		let tap = UITapGestureRecognizer(target: self, action: #selector(ShareTheBillVC.dismissKeyboard))
@@ -76,8 +76,10 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 	
 	// MARK: *** TipSlider Actions
 	@IBAction func tipSliderUpdate(_ sender: AnyObject) {
-		tipSelectorSlider.value = roundf(tipSelectorSlider.value*10)*0.1
-		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value*100))%")
+		
+		tipSelectorSlider.value = (tipSelectorSlider.value.rounded()/10).rounded()*10
+		print(tipSelectorSlider.value)
+		tipSelectorLbl.text = ("TIP \(Int(tipSelectorSlider.value))%")
 		if billValueTxtFld.text != "" {
 			updateValues()
 		}
