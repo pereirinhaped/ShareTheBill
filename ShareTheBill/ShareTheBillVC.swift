@@ -123,12 +123,15 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		}
 		
 		if let billValueTxt = billValueTxtFld.text {
-			if !billValueTxt.characters.contains(",") && !billValueTxt.characters.contains(".") {
+			if !billValueTxt.characters.contains(",") && !billValueTxt.characters.contains(".") && !(billValueTxtFld.text == "") {
 				billValueTxtFld.text = "\(removeZeros(aString: billValueTxt)),00"
 				billValueToString = billValueTxt
-			} else if billValueTxt.characters.contains(",") {
+			} else if billValueTxt.characters.contains(",") && !(billValueTxtFld.text == "") {
 				billValueTxtFld.text = removeZeros(aString: billValueTxt)
 				billValueToString = removeZeros(aString: billValueTxt.replacingOccurrences(of: ",", with: "."))
+			} else if billValueTxtFld.text == "" {
+				billValueTxtFld.text = ""
+				billValueToString = "0"
 			} else {
 				billValueTxtFld.text = removeZeros(aString: billValueTxt.replacingOccurrences(of: ".", with: ","))
 				billValueToString = billValueTxt
