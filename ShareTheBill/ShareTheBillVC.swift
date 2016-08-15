@@ -143,6 +143,13 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 				billValueToString = billValueTxt
 			}
 		}
+		
+		if let billValueWithComma = billValueTxtFld.text {
+			if billValueWithComma.characters.first == "," {
+				billValueTxtFld.text = "0\(billValueWithComma)"
+			}
+		}
+		
 		if let billValue = Double(billValueToString) {
 			billCalc.billValue = billValue
 		}
