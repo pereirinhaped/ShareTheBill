@@ -145,9 +145,18 @@ class ShareTheBillVC: UIViewController, UITextFieldDelegate {
 		}
 		
 		if let billValueWithComma = billValueTxtFld.text {
-			if billValueWithComma.characters.first == "," {
-				billValueTxtFld.text = "0\(billValueWithComma)"
+			var finalBillValue = billValueWithComma
+			if billValueWithComma.characters.first == "," && billValueWithComma.characters.count == 1 {
+				finalBillValue = "0\(billValueWithComma)00"
+			} else if billValueWithComma.characters.first == "," && billValueWithComma.characters.count != 1 {
+				finalBillValue = "0\(billValueWithComma)"
 			}
+			
+			if finalBillValue.characters.last == "," {
+				finalBillValue = "\(finalBillValue)00"
+			}
+
+			billValueTxtFld.text = finalBillValue
 		}
 		
 		if let billValue = Double(billValueToString) {
